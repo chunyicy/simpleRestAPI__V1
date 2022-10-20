@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+{% block content %}
+
+        <h1>Organism ID: {{type}}</h1>
+        <table>
+            <tr><th>Protein ID</th></tr>
+            {% for protein in proteins %}
+            <tr><td>id: {{protein.pk}}</a></td></tr>
+            <tr><td>protein_ID: {{protein.protein_ID}}</a></td></tr>
+            <tr><td>Link to view protein information: <a href="/protein/{{protein.pk}}">{{protein.protein_ID}}</a></td></tr>
+            
+            {% endfor %}
+
+
+   
+        </table>
+{% endblock %}
+
+

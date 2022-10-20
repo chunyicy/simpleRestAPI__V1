@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+
+
+<div class="container-fluid">
+    <div class="row">
+    
+ 
+<div class="col-4" id = "gene_detail">
+{% block content %}
+        
+        {% for protein in proteins %}
+        <table >
+            <h1>{{ protein }}</h1>
+            <tr><th>KEY</th><th>VALUE</th></tr>
+            <tr><th>protein_ID: </th><th>{{ protein.protein_ID }}</th></tr>
+            <tr><th>length_of_protein:</th><th>{{ protein.length_of_protein }}</th></tr>
+            <tr><th>start:</th><th>{{ protein.domain_start_coordinate }}</th></tr>
+            <tr><th>end:</th><th>{{ protein.domain_end_coordinate }}</th></tr>
+
+            {% with organism=protein.organism_taxa_ID %}
+                <tr><th>organism taxa ID: </th><th>{{ organism.organism_taxa_ID }}</th></tr>
+                <tr><th>organism clade identifier: </th><th>{{ organism.organism_clade_identifier }}</th></tr>
+                <tr><th>organism_scientific_genus_name: </th><th>{{ organism.organism_scientific_genus_name }}</th></tr>
+                <tr><th>organism_scientific_species_name: </th><th>{{ organism.organism_scientific_species_name }}</th></tr>
+
+            {% endwith %}
+
+
+            {% with domain=protein.domain_ID %}
+            <tr><th>domain_ID: </th><th>{{ domain.domain_ID }}</th></tr>
+            <tr><th>domain_description: </th><th>{{ domain.domain_description }}</th></tr>
+            {% endwith %}
+          
+            {% with pfam=protein.domain_ID.pfam_domain_ID %}
+            <tr><th>pfam_domain_ID: </th><th>{{ pfam.pfam_domain_ID }}</th></tr>
+            <tr><th>pfam_domain_description: </th><th>{{ pfam.pfam_domain_description }}</th></tr>
+            {% endwith %}
+        {% endfor %}
+
+        </table>
+</div>
+{% endblock %}

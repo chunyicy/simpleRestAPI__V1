@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+ {% block content %}
+ 
+        <h1>Organism Table List</h1>
+        <h2>Select Organism</h2>
+        <table>
+            <tr><th>Organism taxa ID</th></tr>
+            {% for organism in organisms %}
+            <tr><td><a href="/organismPfam/{{organism.organism_taxa_ID}}">{{organism.organism_taxa_ID}}</a></td></tr>
+            {% endfor %}
+        </table>
+
+{% endblock %}
+

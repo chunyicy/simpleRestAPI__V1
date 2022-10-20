@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+{% block content %}
+
+    <h1>Organism ID: {{type}}</h1>
+    <table>
+        <tr><th>Protein ID</th></tr>
+        {% for protein in proteins %}
+        <tr><td>id: {{protein.domain_ID.pfam_domain_ID.pk}}</a></td></tr>
+        <tr><td>protein domain_ID: {{protein.domain_ID}}</a></td></tr>
+        <tr><td>pfam_domain_ID: {{protein.domain_ID.pfam_domain_ID.pfam_domain_ID}}</a></td></tr>
+        <tr><td>pfam_domain_description: {{protein.domain_ID.pfam_domain_ID.pfam_domain_description}}</a></td></tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+{% endblock %}
+
+
+

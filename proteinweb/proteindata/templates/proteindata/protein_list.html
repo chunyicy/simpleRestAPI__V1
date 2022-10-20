@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+        <h1>Protein Table List</h1>
+        <table>
+            <tr><th>Protein ID</th></tr>
+            {% for protein in proteins %}
+            <tr><td><a href="/protein/{{protein.protein_ID}}">{{protein.protein_ID}}</a></td></tr>
+            {% endfor %}
+        </table>
+ 
+{% endblock %}

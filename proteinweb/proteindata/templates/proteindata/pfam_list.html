@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+        <h1>Pfam Table List</h1>
+        <table>
+            <tr><th>Pfam domain ID</th></tr>
+            {% for pfam in pfams %}
+            <tr><td><a href="/pfam/{{pfam.pfam_domain_ID}}">{{pfam.pfam_domain_ID}}</a></td></tr>
+            {% endfor %}
+        </table>
+{% endblock %}

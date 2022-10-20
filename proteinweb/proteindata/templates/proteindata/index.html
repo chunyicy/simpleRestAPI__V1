@@ -1,0 +1,27 @@
+{% extends "./base.html" %}
+
+{% block content %}
+        <br/>
+        <h1>Protein Table List</h1>
+        <h5>Click on the link below to view all the Proteins.</h5>
+        <h5><a href="/proteinList/">Protein List</a></h5><br/>
+
+        <h1>Pfam Table List</h1>
+        <h5>Click on the link below to view all the Pfams.</h5>
+        <h5><a href="/pfamList/">Pfam List</a></h5><br/>
+
+        
+        <h1>A list of all proteins for a given organism</h1>
+        <h5>Cink on the link below to select an Organism to view it's proteins <h5>
+        <h5><a href="/organismProteinList/">Organism Protein List</a></h5><br/>
+
+        <h1>A list of all domains in all the proteins for a given organism</h1>
+        <h5>Click on the link below to select an Organism to view a list of all domains in all the proteins for a given organism.</h5>
+        <h5><a href="/organismPfamList/">Organism Pfam domain List</a></h5><br/>
+
+        
+        <h2>Create Protein Entry</h2>
+        <h5>Click on the link below to add protein entry into database</h5>
+        <h5><a href="/create_protein/">Add Protein Entry</a></h5><br/>
+{% endblock %}
+
